@@ -35,8 +35,7 @@ public class TarjetaCredito extends Producto {
 				+ String.format("%010d", numero) + " y referencia : " + descripcion);
 		return true;
 	}
-	
-	
+
 	public void generarPlastico(String path) throws FileNotFoundException {
 		FileOutputStream fileOutputStream = new FileOutputStream(path);
 	}

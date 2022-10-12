@@ -2,6 +2,7 @@ package com.educacionit.bootcamp.entidades;
 
 import java.time.LocalDateTime;
 
+import com.educacionit.bootcamp.excepciones.ProductoExcepcion;
 import com.educacionit.bootcamp.interfaces.Pago;
 
 public abstract class Producto implements Pago {
@@ -24,7 +25,12 @@ public abstract class Producto implements Pago {
 		return numero;
 	}
 
-	public void setNumero(Long numero) {
+	public void setNumero(Long numero) throws ProductoExcepcion {
+		if (numero < 0) {
+			throw new ProductoExcepcion("Debe ser un numero valido, mayor a cero",1);
+		} else if (numero == 0) {
+			throw new ProductoExcepcion("No puede ser cero", 2);
+		}
 		this.numero = numero;
 	}
 

@@ -16,7 +16,7 @@ import com.educacionit.bootcamp.entidades.TarjetaCredito;
  *
  */
 public class App {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// recordando polimorfismo
 		Producto producto = new TarjetaCredito(1L, "HSBC", LocalDateTime.now(), LocalDate.parse("2022-10-26"));
 		// arreglo
