@@ -2,8 +2,9 @@ package com.educacionit.bootcamp.entidades;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
-public abstract class Persona {
+public abstract class Persona implements Comparable<Persona> {
 	protected Documento documento;
 	protected String nombreCompleto;
 	protected LocalDate fechaNacimiento;
@@ -27,6 +28,23 @@ public abstract class Persona {
 	public String toString() {
 		return "Persona [" + documento + ", nombreCompleto=" + nombreCompleto + ", fechaNacimiento=" + fechaNacimiento
 				+ ", activo=" + activo + ", fechaCreacion=" + fechaCreacion + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(documento);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(documento, other.documento);
 	}
 
 	public Documento getDocumento() {

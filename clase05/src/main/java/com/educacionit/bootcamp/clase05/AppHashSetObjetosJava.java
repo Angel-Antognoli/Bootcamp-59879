@@ -3,9 +3,12 @@ package com.educacionit.bootcamp.clase05;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
+// HashSet , List y Map
 public class AppHashSetObjetosJava {
 	public static void main(String[] args) {
+		// recupera la informacion mas rapida que cualquier otra coleccion
+		// no duplicados
+		// no me importa el orden 
 		Set<String> roles = new HashSet<>();
 		// agregar elementos
 

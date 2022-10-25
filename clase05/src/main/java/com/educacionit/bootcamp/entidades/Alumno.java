@@ -30,6 +30,28 @@ public class Alumno extends Persona implements EnviarMail<Alumno>{
 				+ "]";
 	}
 
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Arrays.hashCode(cursos);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Arrays.equals(cursos, other.cursos);
+	}
+
 	public String[] getCursos() {
 		return cursos;
 	}
@@ -42,6 +64,22 @@ public class Alumno extends Persona implements EnviarMail<Alumno>{
 	public boolean enviarMail(String correo, Alumno e) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	//alumno1 =  new Alumno(octavio 25);
+	//alumno2 =  new Alumno(Andrea 39);
+	// alumno1.compareTo(alumno2);
+	public int compareTo(Persona o) {
+		// alumno1.edad - alumno2.edad;
+		
+		// es negativo el elemento 1 esta primero
+		// es cero es igual
+		// positivo el alumno2 esta primero
+		
+		
+		// des alumno2.edad - alumno1.edad;
+
+		return 0;
 	}
 
 
